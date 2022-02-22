@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
  * View Model to keep a reference to the Inventory repository and an up-to-date list of all items.
  *
  */
-class InventoryViewModel(private val postDao: PostDao) : ViewModel() {
+class DigitalJournalViewModel(private val postDao: PostDao) : ViewModel() {
 
     // Cache all items form the database using LiveData.
     val allItems: LiveData<List<Post>> = postDao.getItems().asLiveData()
@@ -116,11 +116,11 @@ class InventoryViewModel(private val postDao: PostDao) : ViewModel() {
 /**
  * Factory class to instantiate the [ViewModel] instance.
  */
-class InventoryViewModelFactory(private val postDao: PostDao) : ViewModelProvider.Factory {
+class DigitalJournalViewModelFactory(private val postDao: PostDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(InventoryViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(DigitalJournalViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return InventoryViewModel(postDao) as T
+            return DigitalJournalViewModel(postDao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

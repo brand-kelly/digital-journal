@@ -16,14 +16,14 @@ import com.example.digital_journal.data.Post
 import com.example.digital_journal.databinding.FragmentAddItemBinding
 
 /**
- * Fragment to add or update an item in the Inventory database.
+ * Fragment to add or update an item in the Post database.
  */
 class AddItemFragment : Fragment() {
 
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     // to share the ViewModel across fragments.
-    private val viewModel: InventoryViewModel by activityViewModels {
-        InventoryViewModelFactory(
+    private val viewModel: DigitalJournalViewModel by activityViewModels {
+        DigitalJournalViewModelFactory(
             (activity?.application as DigitalJournalApplication).database
                 .postDao()
         )
@@ -87,7 +87,7 @@ class AddItemFragment : Fragment() {
             viewModel.updateItem(
                 this.navigationArgs.itemId,
                 this.binding.itemPost.text.toString(),
-
+                "2022.02.10"
 
             )
             val action = AddItemFragmentDirections.actionAddItemFragmentToItemListFragment()
