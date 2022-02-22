@@ -15,8 +15,8 @@ import com.example.digital_journal.databinding.ItemListFragmentBinding
  * Main fragment displaying details for all items in the database.
  */
 class ItemListFragment : Fragment() {
-    private val viewModel: InventoryViewModel by activityViewModels {
-        InventoryViewModelFactory(
+    private val viewModel: DigitalJournalViewModel by activityViewModels {
+        DigitalJournalViewModelFactory(
             (activity?.application as DigitalJournalApplication).database.postDao()
         )
     }

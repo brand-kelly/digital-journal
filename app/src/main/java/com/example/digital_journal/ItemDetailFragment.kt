@@ -21,8 +21,8 @@ class ItemDetailFragment : Fragment() {
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
     lateinit var post: Post
 
-    private val viewModel: InventoryViewModel by activityViewModels {
-        InventoryViewModelFactory(
+    private val viewModel: DigitalJournalViewModel by activityViewModels {
+        DigitalJournalViewModelFactory(
             (activity?.application as DigitalJournalApplication).database.postDao()
         )
     }
