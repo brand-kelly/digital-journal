@@ -14,9 +14,7 @@ import com.example.digital_journal.data.Post
 import com.example.digital_journal.databinding.FragmentItemDetailBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-/**
- * [ItemDetailFragment] displays the details of the selected item.
- */
+
 class ItemDetailFragment : Fragment() {
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
     lateinit var post: Post
@@ -39,9 +37,7 @@ class ItemDetailFragment : Fragment() {
         return binding.root
     }
 
-    /**
-     * Binds views with the passed in item data.
-     */
+
     private fun bind(post: Post) {
         binding.apply {
             itemPost.text = post.itemPost
@@ -50,9 +46,7 @@ class ItemDetailFragment : Fragment() {
         }
     }
 
-    /**
-     * Navigate to the Edit item screen.
-     */
+
     private fun editItem() {
         val action = ItemDetailFragmentDirections.actionItemDetailFragmentToAddItemFragment(
             getString(R.string.edit_fragment_title),
@@ -61,9 +55,7 @@ class ItemDetailFragment : Fragment() {
         this.findNavController().navigate(action)
     }
 
-    /**
-     * Displays an alert dialog to get the user's confirmation before deleting the item.
-     */
+
     private fun showConfirmationDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(android.R.string.dialog_alert_title))
@@ -76,9 +68,7 @@ class ItemDetailFragment : Fragment() {
             .show()
     }
 
-    /**
-     * Deletes the current item and navigates to the list fragment.
-     */
+
     private fun deleteItem() {
         viewModel.deleteItem(post)
         findNavController().navigateUp()
@@ -87,18 +77,14 @@ class ItemDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.itemId
-        // Retrieve the item details using the itemId.
-        // Attach an observer on the data (instead of polling for changes) and only update the
-        // the UI when the data actually changes.
+
         viewModel.retrieveItem(id).observe(this.viewLifecycleOwner) { selectedItem ->
             post = selectedItem
             bind(post)
         }
     }
 
-    /**
-     * Called when fragment is destroyed.
-     */
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -8,9 +8,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-/**
- * Entity data class represents a single row in the database.
- */
+
 
 @Entity
 data class Post(

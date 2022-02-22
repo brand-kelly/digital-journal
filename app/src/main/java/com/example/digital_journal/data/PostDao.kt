@@ -8,9 +8,7 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
-/**
- * Database access object to access the Inventory database
- */
+
 @Dao
 interface PostDao {
 
@@ -20,8 +18,7 @@ interface PostDao {
     @Query("SELECT * from post WHERE id = :id")
     fun getItem(id: Int): Flow<Post>
 
-    // Specify the conflict strategy as IGNORE, when the user tries to add an
-    // existing Item into the database Room ignores the conflict.
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(post: Post)
 

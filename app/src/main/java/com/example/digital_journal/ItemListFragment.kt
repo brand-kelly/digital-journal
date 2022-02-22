@@ -11,9 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.digital_journal.databinding.ItemListFragmentBinding
 
-/**
- * Main fragment displaying details for all items in the database.
- */
+
 class ItemListFragment : Fragment() {
     private val viewModel: DigitalJournalViewModel by activityViewModels {
         DigitalJournalViewModelFactory(
@@ -43,8 +41,7 @@ class ItemListFragment : Fragment() {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = adapter
-        // Attach an observer on the allItems list to update the UI automatically when the data
-        // changes.
+
         viewModel.allItems.observe(this.viewLifecycleOwner) { items ->
             items.let {
                 adapter.submitList(it)

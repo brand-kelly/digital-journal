@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.digital_journal.data.Post
 import com.example.digital_journal.databinding.ItemListItemBinding
 
-/**
- * [ListAdapter] implementation for the recyclerview.
- */
+
 
 class ItemListAdapter(private val onItemClicked: (Post) -> Unit) :
     ListAdapter<Post, ItemListAdapter.ItemViewHolder>(DiffCallback) {
