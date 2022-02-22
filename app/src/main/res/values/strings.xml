@@ -2,7 +2,6 @@
     <string name="app_name">Digital Journal</string>
     <string name="item_post_req">Add Journal Post Here <font color='#FF0000'>*</font></string>
     <string name="add_entry">Add Entry</string>
-    <string name="item_detail_fragment_title">Item Details</string>
     <string name="add_fragment_title">Add Post</string>
     <string name="edit_fragment_title">Edit Post</string>
     <string name="date">Date</string>
@@ -13,4 +12,5 @@
     <string name="yes">Yes</string>
     <string name="edit_item">Edit Item</string>
     <string name="add_new_item">Add new item</string>
+    <string name="item_detail_fragment_title">Post Details</string>
 </resources>

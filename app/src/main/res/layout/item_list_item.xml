@@ -11,9 +11,10 @@
     <TextView
         android:id="@+id/item_post"
         style="@style/Widget.Inventory.ListItemTextView"
-        android:layout_width="376dp"
-        android:layout_height="93dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginStart="@dimen/margin_between_elements"
+        android:layout_marginEnd="@dimen/margin_between_elements"
         android:fontFamily="sans-serif"
         app:layout_constraintBottom_toTopOf="@id/item_date"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,6 @@
     <TextView
         android:id="@+id/item_date"
         style="@style/Widget.Inventory.ListItemTextView"
-        _weight="1"
         android:layout_width="100dp"
         android:layout_below="@+id/item_post"
         android:layout_marginStart="8dp"

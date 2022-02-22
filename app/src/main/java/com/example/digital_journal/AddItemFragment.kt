@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.digital_journal.data.DateHandler
 import com.example.digital_journal.data.Post
 import com.example.digital_journal.databinding.FragmentAddItemBinding
 
@@ -74,7 +75,8 @@ class AddItemFragment : Fragment() {
             viewModel.updateItem(
                 this.navigationArgs.itemId,
                 this.binding.itemPost.text.toString(),
-                "2022.02.10"
+                // TODO make this property use old date or change to edited if someone edits
+                "Edited: " + (DateHandler.currentDate).toString()
 
             )
             val action = AddItemFragmentDirections.actionAddItemFragmentToItemListFragment()
